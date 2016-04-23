@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:700|Muli);
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+}
+
+/*---------------------*/
+/* Main Styles */
+/*---------------------*/
+html {
+  background: #381f24;
+}
+
+header,
+main,
+.intro {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+header:after,
+main:after,
+.intro:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+main {
+  margin-bottom: 5%;
+}
+
+h1,
+h2 {
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  color: white;
+}
+
+p {
+  font-family: 'Muli', sans-serif;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+header {
+  height: 20vh;
+}
+header h1 {
+  padding-top: 10vh;
+  font-size: 3em;
+}
+
+h2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+a {
+  color: #ff9aab;
+  text-decoration: none;
+}
+a:hover {
+  color: #cc3498;
+}
+
+/*---------------------*/
+/* FLEXBOX */
+/*---------------------*/
+.flex-container {
+  width: 90%;
+  padding: 10px;
+  -webkit-display: flex;
+  -ms-display: flexbox;
+  display: flex;
+}
+
+.flex-container section {
+  border: solid 1px #ff9aab;
+  padding: 10px;
+  margin: 0 1%;
+  flex: 1;
+}
+
+.flex-container section:nth-of-type(2n) {
+  flex: 1.5;
+  /* the second section is worth 6 columns, and 1st and last get 3*/
+}
+
+@media only screen and (max-width: 768px) {
+  .flex-container {
+    -webkit-flex-flow: column;
+    -ms-flex-flow: column;
+    flex-flow: column;
+  }
+
+  .flex-container section:nth-of-type(2n) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,104 @@
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+}
+
+/*---------------------*/
+/* Main Styles */
+/*---------------------*/
+
+html {
+	background: $bkg;
+}
+
+header,
+main,
+.intro {
+	@include container(960px);
+}
+
+main {
+	margin-bottom: 5%;
+}
+
+h1,
+h2 {
+	text-align: center;
+	font-family: 'Amatic SC', cursive;
+	color: $full-white;
+}
+
+p {
+	font-family: 'Muli', sans-serif;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: $white;
+}
+
+
+header {
+	height: 20vh;
+
+	h1 {
+		padding-top: 10vh;
+		font-size: 3em;
+	}//h1
+}//header
+
+h2 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+a {
+	color: $light-pink;
+	text-decoration: none;
+
+	&:hover {
+		color: $dark-pink;
+	}//hover
+}//a
+
+/*---------------------*/
+/* FLEXBOX */
+/*---------------------*/
+
+.flex-container {
+	width: 90%;
+	padding: 10px;
+	// border: solid 1px $light-pink;
+
+	-webkit-display: flex;
+	-ms-display: flexbox;
+	display: flex;
+}
+
+.flex-container section {
+	// background: $white;
+	border: solid 1px $light-pink;
+	padding: 10px;
+	margin: 0 1%;
+	flex: 1;
+}
+
+.flex-container section:nth-of-type(2n) {
+	flex: 1.5; /* the second section is worth 6 columns, and 1st and last get 3*/
+}
+
+
+@media only screen and (max-width: 768px) {
+	.flex-container {
+		-webkit-flex-flow: column;
+		-ms-flex-flow: column;
+		flex-flow: column;
+	}
+
+	.flex-container section:nth-of-type(2n) {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+}
+
+
